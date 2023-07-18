@@ -1,0 +1,17 @@
+<form (submit)="addAppointment()">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Title" [(ngModel)]="title" name="title" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Date" [(ngModel)]="date" name="date" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Description" [(ngModel)]="description" name="description" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Add Appointment</button>
+</form>
