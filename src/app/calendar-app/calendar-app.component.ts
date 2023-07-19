@@ -6,16 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./calendar-app.component.css']
 })
 export class CalendarAppComponent {
-  appointments: { title: string, date: Date, description: string }[] = [];
+  appointments: any[] = [];
 
-  onAppointmentCreated(appointment: { title: string, date: Date, description: string }) {
+  onAppointmentSubmitted(appointment: any) {
     this.appointments.push(appointment);
-  }
-
-  onAppointmentUpdated(updatedAppointment: { title: string, date: Date, description: string }) {
-    const index = this.appointments.findIndex(appt => appt.title === updatedAppointment.title);
-    if (index !== -1) {
-      this.appointments[index] = updatedAppointment;
-    }
   }
 }

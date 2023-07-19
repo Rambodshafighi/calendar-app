@@ -1,5 +1,4 @@
-// appointment-list.component.ts
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-appointment-list',
@@ -7,10 +6,5 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./appointment-list.component.css']
 })
 export class AppointmentListComponent {
-  @Input() appointments: { title: string, date: Date, description: string }[] = [];
-  @Output() appointmentDeleted = new EventEmitter<number>();
-
-  onDeleteAppointment(index: number) {
-    this.appointmentDeleted.emit(index);
-  }
+  @Input() appointments: any[] = [];
 }

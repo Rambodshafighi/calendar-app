@@ -1,7 +1,6 @@
-<!-- appointment-list.component.html -->
 <h2>Appointment List</h2>
 <ul>
   <li *ngFor="let appointment of appointments">
-    <strong>{{ appointment.title }}</strong> - {{ appointment.date | date }} - {{ appointment.description }}
+    <strong>{{ appointment.title }}</strong> - {{ appointment.date | date: 'yyyy-MM-dd' }} - {{ appointment.description }}
   </li>
 </ul>

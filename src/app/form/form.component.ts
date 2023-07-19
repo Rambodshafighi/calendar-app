@@ -6,19 +6,18 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  @Output() appointmentSubmitted = new EventEmitter<{ title: string, date: Date, description: string }>();
+  formData: any = {};
 
-  title: string = '';
-  date: Date | null = null;
-  description: string = '';
+  @Output() appointmentSubmitted = new EventEmitter<any>();
 
-  addAppointment() {
-    if (this.title && this.date && this.description) {
-      const newAppointment = { title: this.title, date: this.date, description: this.description };
-      this.appointmentSubmitted.emit(newAppointment);
-      this.title = '';
-      this.date = null;
-      this.description = '';
-    }
+  onFormSubmit() {
+    const appointment = {
+      title: this.formData.title,
+      date: new Date(this.formData.date),
+      description: this.formData.description
+    };
+
+    this.appointmentSubmitted.emit(appointment);
+    this.formData = {}; // Reset form data after submission
   }
 }

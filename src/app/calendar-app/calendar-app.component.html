@@ -1,1 +1,3 @@
-<app-calendar-view [appointments]="appointments" (appointmentMoved)="onAppointmentMoved($event)"></app-calendar-view>
+<h2>Calendar App</h2>
+<app-form (appointmentSubmitted)="onAppointmentSubmitted($event)"></app-form>
+<app-appointment-list [appointments]="appointments"></app-appointment-list>

@@ -6,10 +6,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./calendar-view.component.css']
 })
 export class CalendarViewComponent {
-  @Input() appointments: { title: string, date: Date, description: string }[] = [];
+  @Input() appointments: any[] = [];
   @Output() appointmentMoved = new EventEmitter<{ fromIndex: number, toIndex: number }>();
-
-  onAppointmentMoved(fromIndex: number, toIndex: number) {
-    this.appointmentMoved.emit({ fromIndex, toIndex });
-  }
 }
