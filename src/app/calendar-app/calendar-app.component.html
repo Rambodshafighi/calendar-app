@@ -1,3 +1,10 @@
-<h2>Calendar App</h2>
-<app-form (appointmentSubmitted)="onAppointmentSubmitted($event)"></app-form>
-<app-appointment-list [appointments]="appointments"></app-appointment-list>
+<div class="calendar-app-container">
+  <div class="form-section">
+    <h2>Add Appointment</h2>
+    <app-form (appointmentSubmitted)="onAppointmentSubmitted($event)"></app-form>
+  </div>
+  <div class="calendar-section">
+    <h2>Appointments</h2>
+    <app-appointment-list [appointments]="appointments" (deleteAppointment)="onDeleteAppointment($event)" (moveAppointment)="onMoveAppointment($event as any)"></app-appointment-list>
+  </div>
+</div>

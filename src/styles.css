@@ -1,4 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+/* Your custom styles go here */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Example styles (can be modified or replaced as desired) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-app-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.form-section,
+.calendar-section {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .mat-form-field {
+  margin-bottom: 15px;
+}
+
+button {
+  align-self: flex-end;
+}
+
+.appointment-list-item {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  cursor: move;
+}
